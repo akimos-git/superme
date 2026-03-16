@@ -811,4 +811,12 @@ h3 {
     .pb-xl { padding-bottom: 64px; }
     .section-container { padding: 0 16px; }
     .dark-mode { padding: 48px 24px; }
+    
+    /* Button Stacking for Enterprise CTA */
+    .mt-xl > .btn { 
+        display: block; 
+        width: 100%; 
+        margin-left: 0; 
+        margin-bottom: 16px; 
+    }
 }
