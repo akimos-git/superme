@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
         rootMargin: "0px 0px -50px 0px"
     });
 
-    elementsToAnimate.forEach(el => observer.observe(el));
+    // Ensure all elements with .animate-on-scroll are observed
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
     // Nav pill minimize on scroll
     const nav = document.querySelector('.pill-nav');
@@ -64,7 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
         'sports_catalyst': 'Echelon 1: Engagement Unit (Game-day Social, Fan Experience)',
         'sports_analyst': 'Echelon 2: Performance Optimizer (Sponsorship ROI, Biometrics)',
         'sports_architect': 'Echelon 3: Infrastructure Pioneer (Smart-Stadium Tech, Global Rights)',
-        'sports_artisan': 'Echelon 1: Asset Producer (Sports Highlight Editor)'
+        'sports_artisan': 'Echelon 1: Asset Producer (Sports Highlight Editor)',
+        'tech_artisan': 'Echelon 1: Frontend Builder',
+        'tech_analyst': 'Echelon 2: QA Analyst & Data Associate',
+        'tech_architect': 'Echelon 3: Backend Support Associate',
+        'tech_catalyst': 'Echelon 1: Tech Growth & Support',
+        'business_catalyst': 'Echelon 1: Sales Associate & Growth Coordinator',
+        'business_analyst': 'Echelon 2: Operations Analyst',
+        'business_artisan': 'Echelon 1: Client Success Executive',
+        'business_architect': 'Echelon 3: Operations Architect',
+        'design_artisan': 'Echelon 1: Graphic Designer & Motion Graphic Editor',
+        'design_catalyst': 'Echelon 2: Brand Asset Creator',
+        'design_architect': 'Echelon 3: UI Assistant & Design Systems',
+        'design_analyst': 'Echelon 2: UX Researcher'
     };
 
     function updateOpportunityMap() {
@@ -83,4 +96,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     economyFilter.addEventListener('change', updateOpportunityMap);
     dnaFilter.addEventListener('change', updateOpportunityMap);
+    // Interactive Parallax for Hero section
+    const heroSection = document.querySelector('.hero-card');
+    const parallaxLayers = document.querySelectorAll('.parallax-layer');
+    if (heroSection && parallaxLayers.length > 0) {
+        heroSection.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 25;
+            const y = (window.innerHeight / 2 - e.pageY) / 25;
+            parallaxLayers.forEach(layer => {
+                const speed = parseFloat(layer.getAttribute('data-speed')) || 1;
+                layer.style.marginLeft = `${x * speed}px`;
+                layer.style.marginTop = `${y * speed}px`;
+            });
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            parallaxLayers.forEach(layer => {
+                layer.style.marginLeft = '0px';
+                layer.style.marginTop = '0px';
+            });
+        });
+    }
 });
