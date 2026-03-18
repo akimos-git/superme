@@ -47,23 +47,20 @@
                 <h1 style="color: white">Map your DNA<br>to the Economy.</h1>
                 <p class="subtitle mt-sm text-light" style="color: rgba(255,255,255,0.9)">The "Super Me" Architecture:
                     Precision upskilling and fractional deployment for the new economy.</p>
-                <div class="quiz-container mt-lg glass-card dark text-left" id="dna-quiz">
-                    <h3 style="color: var(--primary-yellow)">Micro-Sprint Scenario</h3>
-                    <p class="mt-sm" style="color: white; font-size: 1.1rem; max-width: 600px;">"A top athlete’s social
-                        media account was just hacked during the championship game. Money is being lost every second.
-                        What is your first move?"</p>
-                    <div class="quiz-options mt-md">
-                        <button class="btn btn-secondary action-option" data-dna="Analyst">A) Open analytics to see the
-                            reach of the damage.</button>
-                        <button class="btn btn-secondary action-option" data-dna="Artisan">B) Draft a heartfelt apology
-                            and comeback post.</button>
-                        <button class="btn btn-secondary action-option" data-dna="Architect">C) Call security and legal
-                            to lock it down.</button>
-                        <button class="btn btn-secondary action-option" data-dna="Catalyst">D) Start a live-stream to
-                            distract the fans.</button>
+                <div class="dna-analyzer mt-lg glass-card dark" id="dna-analyzer" style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; padding: 32px 48px; border: 1px solid rgba(244, 195, 0, 0.2); box-shadow: 0 16px 40px rgba(0,0,0,0.3);">
+                    <div class="text-left" style="flex: 1; min-width: 250px;">
+                        <h3 style="color: var(--primary-yellow); font-size: 1.8rem; letter-spacing: -0.02em;">DNA Sequence Audit</h3>
+                        <p class="mt-sm" style="color: rgba(255,255,255,0.8);">
+                            Bypass traditional resumes. Run a real-time diagnostic to generate your economic alignment profile.
+                        </p>
                     </div>
-                    <div id="quiz-result" class="mt-md"
-                        style="display:none; color: var(--primary-yellow); font-weight:bold;"></div>
+                    <div class="analyzer-interface text-center" style="flex: 1; min-width: 250px;">
+                        <div class="scanner-window" style="background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; position: relative; overflow: hidden; height: 75px; display: flex; align-items: center; justify-content: center;">
+                            <div id="scanner-text" style="font-family: monospace; color: #10B981; font-size: 1.1rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">AWAITING SYNC...</div>
+                            <div class="scan-line"></div>
+                        </div>
+                        <button id="run-diagnostic-btn" class="btn btn-primary mt-md w-100" style="width: 100%; justify-content: center;">Run Live Diagnostic</button>
+                    </div>
                 </div>
             </div>
         </div>

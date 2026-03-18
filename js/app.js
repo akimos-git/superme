@@ -34,23 +34,49 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // DNA Quiz Logic
-    const quizOptions = document.querySelectorAll('.action-option');
-    const quizResult = document.getElementById('quiz-result');
-    quizOptions.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const dna = e.target.getAttribute('data-dna');
-            quizResult.style.display = 'block';
-            quizResult.innerHTML = `Your Super Me Profile: <strong>The Strategic ${dna}</strong><br>
-                                    <span style="color:var(--text-light-muted); font-size: 0.9em; font-weight:normal;">Primary Strand: 75% ${dna} | Recommended Starting Echelon: Echelon 1 with fast-track bridge.</span>`;
+    // DNA Scanner Logic
+    const runBtn = document.getElementById('run-diagnostic-btn');
+    const scannerText = document.getElementById('scanner-text');
+    const scanLine = document.querySelector('.scan-line');
 
-            // visually deselect others
-            quizOptions.forEach(opt => opt.style.opacity = '0.5');
-            e.target.style.opacity = '1';
-            e.target.style.background = 'var(--primary-purple)';
-            e.target.style.color = 'white';
+    if(runBtn && scannerText) {
+        const outcomes = [
+            "<span style='color: #FCD34D'>ARCHITECT</span> | Ecosystem Design",
+            "<span style='color: #60A5FA'>ANALYST</span> | Tech Infrastructure",
+            "<span style='color: #A78BFA'>ARTISAN</span> | Production & Assets",
+            "<span style='color: #F472B6'>CATALYST</span> | Sales & Community"
+        ];
+        
+        runBtn.addEventListener('click', () => {
+            if (runBtn.disabled) return;
+            runBtn.disabled = true;
+            runBtn.innerText = "Scanning...";
+            scanLine.style.animation = "scan-vertical 1.2s linear infinite";
+            
+            let ticks = 0;
+            const maxTicks = 25;
+            const interval = setInterval(() => {
+                const randomStr = Math.random().toString(36).substring(2, 10).toUpperCase();
+                scannerText.innerText = `ANALYZING: ${randomStr}`;
+                scannerText.style.color = "#9CA3AF";
+                ticks++;
+                
+                if (ticks >= maxTicks) {
+                    clearInterval(interval);
+                    const finalOutcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+                    scannerText.innerHTML = `MATCH: ${finalOutcome}`;
+                    scannerText.style.color = "#10B981";
+                    runBtn.innerText = "Diagnostic Complete";
+                    scanLine.style.animation = "none";
+                    scanLine.style.top = "-100%";
+                    setTimeout(() => {
+                        runBtn.disabled = false;
+                        runBtn.innerText = "Restart Sequence";
+                    }, 4000);
+                }
+            }, 60);
         });
-    });
+    }
 
     // Opportunity Map Logic
     const economyFilter = document.getElementById('economy-filter');
