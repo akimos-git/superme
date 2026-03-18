@@ -122,24 +122,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     economyFilter.addEventListener('change', updateOpportunityMap);
     dnaFilter.addEventListener('change', updateOpportunityMap);
-    // Interactive Parallax for Hero section
-    const heroSection = document.querySelector('.hero-card');
-    const parallaxLayers = document.querySelectorAll('.parallax-layer');
-    if (heroSection && parallaxLayers.length > 0) {
-        heroSection.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth / 2 - e.pageX) / 25;
-            const y = (window.innerHeight / 2 - e.pageY) / 25;
-            parallaxLayers.forEach(layer => {
-                const speed = parseFloat(layer.getAttribute('data-speed')) || 1;
-                layer.style.marginLeft = `${x * speed}px`;
-                layer.style.marginTop = `${y * speed}px`;
-            });
-        });
-        heroSection.addEventListener('mouseleave', () => {
-            parallaxLayers.forEach(layer => {
-                layer.style.marginLeft = '0px';
-                layer.style.marginTop = '0px';
-            });
-        });
-    }
 });
