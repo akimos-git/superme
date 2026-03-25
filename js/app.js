@@ -26,11 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector('.pill-nav');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
-            nav.style.padding = "8px 24px";
-            nav.style.background = "rgba(255, 255, 255, 0.85)";
+            nav.classList.add('scrolled');
         } else {
-            nav.style.padding = "12px 24px";
-            nav.style.background = "rgba(255, 255, 255, 0.6)";
+            nav.classList.remove('scrolled');
         }
     });
 
@@ -41,40 +39,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if(runBtn && scannerText) {
         const outcomes = [
-            "<span style='color: #FCD34D'>ARCHITECT</span> | Ecosystem Design",
-            "<span style='color: #60A5FA'>ANALYST</span> | Tech Infrastructure",
-            "<span style='color: #A78BFA'>ARTISAN</span> | Production & Assets",
-            "<span style='color: #F472B6'>CATALYST</span> | Sales & Community"
+            "<span class='match-purple'>ARCHITECT</span><span class='match-green'>| Ecosystem Design</span>",
+            "<span class='match-purple'>ANALYST</span><span class='match-green'>| Tech Infrastructure</span>",
+            "<span class='match-purple'>ARTISAN</span><span class='match-green'>| Production & Assets</span>",
+            "<span class='match-purple'>CATALYST</span><span class='match-green'>| Sales & Community</span>"
         ];
         
         runBtn.addEventListener('click', () => {
             if (runBtn.disabled) return;
+            
             runBtn.disabled = true;
-            runBtn.innerText = "Scanning...";
-            scanLine.style.animation = "scan-vertical 1.2s linear infinite";
+            runBtn.innerText = "Analyzing Traits...";
+            if (scanLine) {
+                scanLine.style.animation = "scan-vertical 1.2s linear infinite";
+            }
             
             let ticks = 0;
-            const maxTicks = 25;
+            const maxTicks = 15;
             const interval = setInterval(() => {
-                const randomStr = Math.random().toString(36).substring(2, 10).toUpperCase();
-                scannerText.innerText = `ANALYZING: ${randomStr}`;
+                const randomStr = Math.random().toString(36).substring(2, 8).toUpperCase();
+                scannerText.innerHTML = `<span class="match-label">ANALYZING:</span>${randomStr}<span class="block-cursor"></span>`;
                 scannerText.style.color = "#9CA3AF";
                 ticks++;
                 
                 if (ticks >= maxTicks) {
                     clearInterval(interval);
+                    
                     const finalOutcome = outcomes[Math.floor(Math.random() * outcomes.length)];
-                    scannerText.innerHTML = `MATCH: ${finalOutcome}`;
+                    scannerText.innerHTML = `<span class="match-label">MATCH:</span>${finalOutcome}<span class="block-cursor"></span>`;
                     scannerText.style.color = "#10B981";
-                    runBtn.innerText = "Diagnostic Complete";
-                    scanLine.style.animation = "none";
-                    scanLine.style.top = "-100%";
+                    
+                    if (scanLine) {
+                        scanLine.style.animation = "none";
+                        scanLine.style.top = "-100%";
+                    }
+                    
                     setTimeout(() => {
                         runBtn.disabled = false;
                         runBtn.innerText = "Restart Sequence";
-                    }, 4000);
+                    }, 2000);
                 }
-            }, 60);
+            }, 100);
         });
     }
 
@@ -83,43 +88,88 @@ document.addEventListener("DOMContentLoaded", () => {
     const dnaFilter = document.getElementById('dna-filter');
     const filterResult = document.getElementById('filter-result');
 
-    const roleMap = {
-        'creator_artisan': 'Echelon 1: Asset Producer (Thumbnail Design, Vertical Editing)',
-        'creator_analyst': 'Echelon 2: Growth Engineer (Audience Retention, Brand Negotiator)',
-        'creator_architect': 'Echelon 3: Ecosystem Architect (SaaS Lead, IP Expansion)',
-        'creator_catalyst': 'Echelon 1: Community Moderation / Sales',
-        'sports_catalyst': 'Echelon 1: Engagement Unit (Game-day Social, Fan Experience)',
-        'sports_analyst': 'Echelon 2: Performance Optimizer (Sponsorship ROI, Biometrics)',
-        'sports_architect': 'Echelon 3: Infrastructure Pioneer (Smart-Stadium Tech, Global Rights)',
-        'sports_artisan': 'Echelon 1: Asset Producer (Sports Highlight Editor)',
-        'tech_artisan': 'Echelon 1: Frontend Builder',
-        'tech_analyst': 'Echelon 2: QA Analyst & Data Associate',
-        'tech_architect': 'Echelon 3: Backend Support Associate',
-        'tech_catalyst': 'Echelon 1: Tech Growth & Support',
-        'business_catalyst': 'Echelon 1: Sales Associate & Growth Coordinator',
-        'business_analyst': 'Echelon 2: Operations Analyst',
-        'business_artisan': 'Echelon 1: Client Success Executive',
-        'business_architect': 'Echelon 3: Operations Architect',
-        'design_artisan': 'Echelon 1: Graphic Designer & Motion Graphic Editor',
-        'design_catalyst': 'Echelon 2: Brand Asset Creator',
-        'design_architect': 'Echelon 3: UI Assistant & Design Systems',
-        'design_analyst': 'Echelon 2: UX Researcher'
-    };
+    if (economyFilter && dnaFilter) {
+        const roleMap = {
+            'creator_artisan': 'Asset Producer (Thumbnail Design, Vertical Editing)',
+            'creator_analyst': 'Growth Engineer (Audience Retention, Brand Negotiator)',
+            'creator_architect': 'Ecosystem Architect (SaaS Lead, IP Expansion)',
+            'creator_catalyst': 'Community Moderation / Sales',
+            'sports_artisan': 'Asset Producer (Sports Highlight Editor)',
+            'sports_analyst': 'Performance Optimizer (Sponsorship ROI, Biometrics)',
+            'sports_architect': 'Infrastructure Pioneer (Smart-Stadium Tech, Global Rights)',
+            'sports_catalyst': 'Engagement Unit (Game-day Social, Fan Experience)',
+            'tech_artisan': 'Frontend Builder',
+            'tech_analyst': 'QA Analyst & Data Associate',
+            'tech_architect': 'Backend Support Associate',
+            'tech_catalyst': 'Tech Growth & Support',
+            'business_artisan': 'Client Success Executive',
+            'business_analyst': 'Operations Analyst',
+            'business_architect': 'Operations Architect',
+            'business_catalyst': 'Sales Associate & Growth Coordinator',
+            'design_artisan': 'Graphic Designer & Motion Graphic Editor',
+            'design_analyst': 'UX Researcher',
+            'design_architect': 'UI Assistant & Design Systems',
+            'design_catalyst': 'Brand Asset Creator',
+            // Entertainment
+            'entertainment_artisan': 'Film & Audio Editor',
+            'entertainment_analyst': 'Streaming Analyst',
+            'entertainment_architect': 'Executive Producer',
+            'entertainment_catalyst': 'Talent Agent & Promoter',
+            // Green
+            'green_artisan': 'Renewable Component Technician',
+            'green_analyst': 'Sustainability Auditor',
+            'green_architect': 'Eco-System Planner',
+            'green_catalyst': 'Climate Advocate & Partnerships',
+            // Healthcare
+            'health_artisan': 'Medical Technician & Care Pro',
+            'health_analyst': 'Health Data & Outcomes Analyst',
+            'health_architect': 'Healthcare Systems Director',
+            'health_catalyst': 'Patient Care Coordinator',
+            // Education
+            'edu_artisan': 'Curriculum Developer',
+            'edu_analyst': 'EdTech Outcomes Researcher',
+            'edu_architect': 'Learning Platform Founder',
+            'edu_catalyst': 'Student Success Coach',
+            // Finance
+            'finance_artisan': 'Financial Modeler',
+            'finance_analyst': 'Quantitative Analyst',
+            'finance_architect': 'DeFi Protocol Architect',
+            'finance_catalyst': 'Broker & Investor Relations',
+            // Hospitality
+            'hospitality_artisan': 'Event & Culinary Execution',
+            'hospitality_analyst': 'Yield & Pricing Manager',
+            'hospitality_architect': 'Experience Designer',
+            'hospitality_catalyst': 'Guest Relations Director',
+            // Deep Tech
+            'deeptech_artisan': 'Robotics Prototyper',
+            'deeptech_analyst': 'AI Safety Researcher',
+            'deeptech_architect': 'Machine Learning Architect',
+            'deeptech_catalyst': 'Tech Evangelist'
+        };
 
-    function updateOpportunityMap() {
-        const eco = economyFilter.value;
-        const dna = dnaFilter.value;
-        if (eco && dna) {
-            const key = `${eco}_${dna}`;
-            const resultRole = roleMap[key] || "Echelon 1: Cross-functional Unit";
-            filterResult.style.display = 'block';
-            filterResult.innerHTML = `<strong>Top Match:</strong> <span style="color: var(--primary-yellow)">${resultRole}</span><br>
-                                      <span style="font-size:0.85em; color:var(--text-light-muted);">Precision Module required: Available</span>`;
-        } else {
-            filterResult.style.display = 'none';
+        function updateOpportunityMap() {
+            const eco = economyFilter.value;
+            const dna = dnaFilter.value;
+            if (eco && dna) {
+                const key = `${eco}_${dna}`;
+                const resultRole = roleMap[key] || "Cross-functional Unit";
+                
+                // Animate to visible
+                const wrapper = document.getElementById('role-matching-result-container');
+                filterResult.innerHTML = `
+                    <div class="result-content-inner">
+                        <p class="match-title"><strong>Top Match:</strong> <span class="highlight">${resultRole}</span></p>
+                        <p class="next-step-hint">Recommended Next Step: Take Masterclass</p>
+                    </div>
+                `;
+                wrapper.classList.add('active');
+            } else {
+                const wrapper = document.getElementById('role-matching-result-container');
+                wrapper.classList.remove('active');
+            }
         }
-    }
 
-    economyFilter.addEventListener('change', updateOpportunityMap);
-    dnaFilter.addEventListener('change', updateOpportunityMap);
+        economyFilter.addEventListener('change', updateOpportunityMap);
+        dnaFilter.addEventListener('change', updateOpportunityMap);
+    }
 });

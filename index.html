@@ -18,10 +18,8 @@
         </div>
         <div class="links">
             <a href="#about">About</a>
-            <a href="#dna">DNA Audit</a>
-            <a href="#echelons">Echelons</a>
-            <a href="#economies">Economies</a>
-            <a href="#enterprise">Enterprise</a>
+            <a href="#dna">Strengths</a>
+            <a href="#economies">Industries</a>
         </div>
         <button class="nav-cta btn btn-primary">Get Started</button>
     </nav>
@@ -36,30 +34,32 @@
 
             <div class="floating-ui-tag tag-left">
                 <div class="pulse-dot"></div>
-                <span>Mapping DNA Patterns...</span>
+                <span>Discovering Your Talents...</span>
             </div>
             <div class="floating-ui-tag tag-right">
                 <div class="pulse-dot yellow"></div>
-                <span>Aligning Economic Potential</span>
+                <span>Finding Your Dream Path</span>
             </div>
 
             <div class="hero-content animate-on-scroll">
-                <h1 style="color: white">Map your DNA<br>to the Economy.</h1>
-                <p class="subtitle mt-sm text-light" style="color: rgba(255,255,255,0.9)">The "Super Me" Architecture:
-                    Precision upskilling and fractional deployment for the new economy.</p>
-                <div class="dna-analyzer mt-lg glass-card dark" id="dna-analyzer" style="display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; padding: 32px 48px; border: 1px solid rgba(244, 195, 0, 0.2); box-shadow: 0 16px 40px rgba(0,0,0,0.3);">
-                    <div class="text-left" style="flex: 1; min-width: 250px;">
-                        <h3 style="color: var(--primary-yellow); font-size: 1.8rem; letter-spacing: -0.02em;">DNA Sequence Audit</h3>
-                        <p class="mt-sm" style="color: rgba(255,255,255,0.8);">
-                            Bypass traditional resumes. Run a real-time diagnostic to generate your economic alignment profile.
+                <h1 style="color: white">Find what you're<br>truly great at.</h1>
+                <p class="subtitle mt-sm text-light" style="color: rgba(255,255,255,0.9)">
+                    Super Me helps you discover your natural strengths, learn real-world skills, and build a career you actually love.
+                </p>
+                <div class="dna-analyzer-bento mt-xl animate-on-scroll" id="dna-analyzer">
+                    <div class="bento-content text-center">
+                        <h3 class="bento-title">Find Your Path</h3>
+                        <p class="bento-subtitle mt-sm">
+                            Take a quick interactive quiz to see what careers match your<br>unique personality. No resume needed!
                         </p>
                     </div>
-                    <div class="analyzer-interface text-center" style="flex: 1; min-width: 250px;">
-                        <div class="scanner-window" style="background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; position: relative; overflow: hidden; height: 75px; display: flex; align-items: center; justify-content: center;">
-                            <div id="scanner-text" style="font-family: monospace; color: #10B981; font-size: 1.1rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">AWAITING SYNC...</div>
+                    
+                    <div class="bento-interface text-center mt-lg">
+                        <div class="minimal-result-box">
+                            <div id="scanner-text" class="minimal-text">READY TO START<span class="block-cursor"></span></div>
                             <div class="scan-line"></div>
                         </div>
-                        <button id="run-diagnostic-btn" class="btn btn-primary mt-md w-100" style="width: 100%; justify-content: center;">Run Live Diagnostic</button>
+                        <button id="run-diagnostic-btn" class="bento-btn mt-lg">Discover Your Strengths</button>
                     </div>
                 </div>
             </div>
@@ -69,32 +69,32 @@
     <!-- Layer 0.5: About Super Me -->
     <section id="about" class="section-container mt-xl pb-xl">
         <div class="header-split animate-on-scroll" style="margin-bottom: 64px; align-items: center;">
-            <h2 style="font-weight: 800; font-size: 3.5rem; letter-spacing: -0.03em; line-height: 1.05;">The Engine for <br>the <span style="color: var(--primary-purple);">New Economy</span></h2>
+            <h2 style="font-weight: 800; font-size: 3.5rem; letter-spacing: -0.03em; line-height: 1.05;">Your Guide to <br>the <span style="color: var(--primary-purple);">Real World</span></h2>
             <p style="font-size: 1.25rem; font-weight: 600; color: var(--text-muted); padding-left: 24px; border-left: 4px solid var(--primary-yellow); line-height: 1.5; max-width: 500px;">
-                <span style="font-size: 1.8rem; color: var(--primary-yellow); font-family: Georgia, serif; line-height: 0;">&ldquo;</span>Super Me aligns your unique abilities with real opportunities, building a precise path to meaningful work.<span style="font-size: 1.8rem; color: var(--primary-yellow); font-family: Georgia, serif; line-height: 0;">&rdquo;</span>
+                <span style="font-size: 1.8rem; color: var(--primary-yellow); font-family: Georgia, serif; line-height: 0;">&ldquo;</span>Super Me helps you figure out what you are incredibly good at, teaches you how to do it, and helps you prove it to the world.<span style="font-size: 1.8rem; color: var(--primary-yellow); font-family: Georgia, serif; line-height: 0;">&rdquo;</span>
             </p>
         </div>
 
         <div class="three-col-grid mt-xl" style="gap: 48px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 64px; align-items: flex-start;">
             <!-- 01 -->
             <div class="animate-on-scroll" style="text-align: left;">
-                <div style="font-size: 0.9rem; font-weight: 700; color: var(--primary-purple); letter-spacing: 2px; margin-bottom: 24px;">01 &mdash; UPSKILL</div>
-                <h3 style="font-size: 2rem; margin-bottom: 16px; letter-spacing: -0.02em;">Precision Learning</h3>
-                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.6;">Close specific skill gaps with targeted modules. No more generic theory.</p>
+                <div style="font-size: 0.9rem; font-weight: 700; color: var(--primary-purple); letter-spacing: 2px; margin-bottom: 24px;">01 &mdash; LEARN</div>
+                <h3 style="font-size: 2rem; margin-bottom: 16px; letter-spacing: -0.02em;">Learn What Matters</h3>
+                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.6;">Skip the boring textbooks. We teach you exactly what you need to know for the job you want.</p>
             </div>
 
             <!-- 02 -->
             <div class="animate-on-scroll" style="text-align: left; transition-delay: 0.1s;">
-                <div style="font-size: 0.9rem; font-weight: 700; color: #F59E0B; letter-spacing: 2px; margin-bottom: 24px;">02 &mdash; APPLY</div>
-                <h3 style="font-size: 2rem; margin-bottom: 16px; letter-spacing: -0.02em;">Fractional Sprints</h3>
-                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.6;">Build visible proof through real-world simulations. True capability is forged in practice.</p>
+                <div style="font-size: 0.9rem; font-weight: 700; color: #F59E0B; letter-spacing: 2px; margin-bottom: 24px;">02 &mdash; DO</div>
+                <h3 style="font-size: 2rem; margin-bottom: 16px; letter-spacing: -0.02em;">Real Projects</h3>
+                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.6;">Don't just read about it. Work on real-world projects to build true confidence and experience.</p>
             </div>
 
             <!-- 03 -->
             <div class="animate-on-scroll" style="text-align: left; transition-delay: 0.2s;">
                 <div style="font-size: 0.9rem; font-weight: 700; color: #10B981; letter-spacing: 2px; margin-bottom: 24px;">03 &mdash; PROVE</div>
-                <h3 style="font-size: 2rem; margin-bottom: 16px; letter-spacing: -0.02em;">Super Me Score</h3>
-                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.6;">Your dynamic index of Skill, Consistency, and Impact. Stronger than a resume.</p>
+                <h3 style="font-size: 2rem; margin-bottom: 16px; letter-spacing: -0.02em;">Your Portfolio</h3>
+                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.6;">Build an interactive profile that shows exactly what you can do, which is way better than a standard resume.</p>
             </div>
         </div>
     </section>
@@ -102,214 +102,165 @@
     <!-- Layer 1: Foundation & The DNA Strands -->
     <section id="dna" class="section-container dark-mode mt-xl">
         <div class="header-split animate-on-scroll">
-            <h2>The DNA Strands</h2>
-            <p>Before any learning happens, we must map the individual to the economy. Discover your Super Me DNA.</p>
+            <h2>Your Student DNA</h2>
+            <p>Everyone learns and works differently. Discover which of these 4 personality types you are to find your best path.</p>
         </div>
 
         <div class="bento-grid mt-lg">
             <div class="bento-cell glass-card dark">
                 <div class="tag">Visionary</div>
-                <h3>The Architect</h3>
-                <p>Sees patterns, systems, and long-term consequences. Best suited for Ecosystem Design.</p>
+                <h3>The Dreamer</h3>
+                <p>You have big ideas and love thinking about the future. You are great at leading and planning.</p>
             </div>
             <div class="bento-cell glass-card dark">
                 <div class="tag">Strategy</div>
-                <h3>The Analyst</h3>
-                <p>Loves data, logic, optimization, and "why" things work. Best suited for Analytics & Growth.</p>
+                <h3>The Thinker</h3>
+                <p>You love solving puzzles, working with data, and figuring out how things work behind the scenes.</p>
             </div>
             <div class="bento-cell glass-card dark">
                 <div class="tag">Execution</div>
-                <h3>The Artisan</h3>
-                <p>Focused on high-quality output, aesthetics, and "doing". Best suited for Production.</p>
+                <h3>The Creator</h3>
+                <p>You love making things. Whether it's art, code, or videos, you learn best by creating.</p>
             </div>
             <div class="bento-cell glass-card dark">
                 <div class="tag">Growth</div>
-                <h3>The Catalyst</h3>
-                <p>High energy, persuasive, moves people to action. Best suited for Sales & Community.</p>
+                <h3>The Motivator</h3>
+                <p>You are a people person. You love communicating, helping others, and leading the charge.</p>
             </div>
         </div>
     </section>
 
-    <!-- Layer 3: The Echelons -->
-    <section id="echelons" class="section-container light-mode mt-xl">
-        <div class="text-center mb-xl animate-on-scroll">
-            <h2>The Echelons</h2>
-            <p class="subtitle mt-sm">Precision upskilling tranches matched to your DNA.</p>
-        </div>
-
-        <div class="three-col-grid mt-lg">
-            <!-- Tranche 1 -->
-            <div class="vertical-card frosted">
-                <div class="echelon-badge e1">Tranche 1</div>
-                <h3>The Execution Echelon</h3>
-                <div class="role-tag">The "Doers"</div>
-                <p>High-energy individuals who take a defined brief and turn it into a high-quality asset.</p>
-                <ul class="stats-list">
-                    <li><strong>Scope:</strong> Tactical tasks</li>
-                    <li><strong>Output:</strong> Assets (File, Post, Report)</li>
-                    <li><strong>Risk:</strong> Low</li>
-                    <li><strong>Pay:</strong> Fractional Rates</li>
-                </ul>
-            </div>
-
-            <!-- Tranche 2 -->
-            <div class="vertical-card frosted">
-                <div class="echelon-badge e2">Tranche 2</div>
-                <h3>The Strategic Echelon</h3>
-                <div class="role-tag">The "Optimizers"</div>
-                <p>Individuals who understand why the work is being done. They connect tasks to a goal.</p>
-                <ul class="stats-list">
-                    <li><strong>Scope:</strong> Management & Analytics</li>
-                    <li><strong>Output:</strong> Outcomes (Retention, Leads)</li>
-                    <li><strong>Risk:</strong> Mid</li>
-                    <li><strong>Pay:</strong> Retainers/Bonuses</li>
-                </ul>
-            </div>
-
-            <!-- Tranche 3 -->
-            <div class="vertical-card frosted primary-highlight">
-                <div class="echelon-badge e3">Tranche 3</div>
-                <h3>The Visionary Echelon</h3>
-                <div class="role-tag">The "Architects"</div>
-                <p>The elite tier who understand the underlying economics and build systems to fill gaps.</p>
-                <ul class="stats-list">
-                    <li><strong>Scope:</strong> Innovation Design</li>
-                    <li><strong>Output:</strong> Revenue Streams / Systems</li>
-                    <li><strong>Risk:</strong> High</li>
-                    <li><strong>Pay:</strong> Equity / Rev-share</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <!-- The Echelons section has been removed to keep content student-focused. -->
 
     <!-- Layer 2: The Economic Spheres -->
     <section id="economies" class="section-container dark-mode mt-xl pb-xl">
         <div class="header-split animate-on-scroll">
-            <h2>The Economies</h2>
-            <p>Test-drive different industries with Vibe-Check masterclasses. Use the Opportunity Map to match your DNA.
-            </p>
+            <h2>Explore Industries</h2>
+            <p>Test-drive different careers with our masterclasses. Use the Opportunity Map to match your DNA.</p>
         </div>
 
-        <div class="opportunity-map glass-card dark animate-on-scroll mt-md mb-xl" style="background: var(--bg-darker)">
-            <h3 style="color: var(--primary-purple)">The "Role-Matching" Filter</h3>
-            <div class="filter-controls mt-sm" style="display: flex; gap: 16px;">
-                <select id="economy-filter" class="glass-pill" style="min-width: 200px; color: white;">
-                    <option value="">Select Economy</option>
-                    <option value="creator">Creator Economy</option>
-                    <option value="sports">Sports Economy</option>
-                    <option value="tech">Tech Economy</option>
-                    <option value="business">Business & Growth Economy</option>
-                    <option value="design">Design Economy</option>
-                </select>
-                <select id="dna-filter" class="glass-pill" style="min-width: 200px; color: white;">
-                    <option value="">Select DNA</option>
-                    <option value="architect">Architect (Visionary)</option>
-                    <option value="analyst">Analyst (Strategy)</option>
-                    <option value="artisan">Artisan (Execution)</option>
-                    <option value="catalyst">Catalyst (Growth)</option>
-                </select>
+        <div class="opportunity-map animate-on-scroll mt-md mb-xl">
+            <h3>The "Role-Matching" Filter</h3>
+            <div class="filter-controls mt-md">
+                <div class="select-wrapper">
+                    <select id="economy-filter" class="glass-dropdown">
+                        <option value="">Select Economy</option>
+                        <option value="creator">Creator Economy</option>
+                        <option value="tech">Tech Economy</option>
+                        <option value="business">Business Economy</option>
+                        <option value="sports">Sports Economy</option>
+                        <option value="design">Design Economy</option>
+                        <option value="entertainment">Entertainment Economy</option>
+                        <option value="green">Green Economy</option>
+                        <option value="health">Healthcare Economy</option>
+                        <option value="edu">Education Economy</option>
+                        <option value="finance">Finance Economy</option>
+                        <option value="hospitality">Hospitality Economy</option>
+                        <option value="deeptech">Deep Tech Economy</option>
+                    </select>
+                </div>
+                <div class="select-wrapper">
+                    <select id="dna-filter" class="glass-dropdown">
+                        <option value="">Select DNA</option>
+                        <option value="architect">The Dreamer (Visionary)</option>
+                        <option value="analyst">The Thinker (Strategy)</option>
+                        <option value="artisan">The Creator (Execution)</option>
+                        <option value="catalyst">The Motivator (Growth)</option>
+                    </select>
+                </div>
             </div>
-            <div id="filter-result" class="mt-md"
-                style="padding: 16px; border: 1px dashed var(--primary-yellow); border-radius: 8px; display: none;">
-                <!-- JS will inject the matched role here -->
+            
+            <div id="role-matching-result-container" class="filter-result-wrapper">
+                <div id="filter-result" class="animated-dashed-box">
+                    <!-- JS will inject the matched role here -->
+                </div>
             </div>
         </div>
 
-        <div class="alternating-grid mt-lg">
-            <!-- Creator -->
-            <div class="feature-row">
-                <div class="text-block">
-                    <h3>The Creator Economy</h3>
-                    <p class="mt-sm">Focus: Attention, Community, and Digital Monetization.</p>
-                    <div class="role-pills mt-md">
-                        <span class="pill artisan">Asset Producers (Artisan)</span>
-                        <span class="pill analyst">Growth Engineers (Analyst)</span>
-                        <span class="pill architect">Ecosystem Architects (Architect)</span>
+        <div class="journey-map mt-xl">
+            
+            <!-- Row 1 -->
+            <div class="journey-row">
+                <div class="journey-node left" data-industry="tech">
+                    <div class="node-icon glass-circle"><span class="icon-emoji">💻</span></div>
+                    <div class="node-card glass-card dark">
+                        <h3>The Tech Economy</h3>
+                        <p class="mt-sm">Focus: Coding, Apps, Websites, and Video Games.</p>
+                        <div class="role-pills mt-sm">
+                            <span class="pill artisan">Frontend Builders (Creator)</span>
+                            <span class="pill analyst">QA & Data Associates (Thinker)</span>
+                        </div>
                     </div>
                 </div>
-                <div class="graphic-block glass-card deep-purple-bg">
-                    <div class="mockup-ui">
-                        <div class="line animate-slide-right"></div>
-                        <div class="line short animate-slide-right" style="animation-delay: 0.2s"></div>
-                        <div class="line medium animate-slide-right" style="animation-delay: 0.4s"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sports -->
-            <div class="feature-row reverse mt-xl">
-                <div class="text-block">
-                    <h3>The Sports Economy</h3>
-                    <p class="mt-sm">Focus: Performance, Fandom, and Infrastructure.</p>
-                    <div class="role-pills mt-md">
-                        <span class="pill catalyst">Engagement Units (Catalyst)</span>
-                        <span class="pill analyst">Performance Optimizers (Analyst)</span>
-                        <span class="pill architect">Infrastructure Pioneers (Architect)</span>
-                    </div>
-                </div>
-                <div class="graphic-block glass-card yellow-accent-bg">
-                    <div class="circle-chart">
-                        <div class="pulse"></div>
+                <div class="journey-node right" data-industry="creator">
+                    <div class="node-icon glass-circle"><span class="icon-emoji">📸</span></div>
+                    <div class="node-card glass-card dark">
+                        <h3>The Creator Economy</h3>
+                        <p class="mt-sm">Focus: YouTube, Social Media, Podcasts, and Digital Art.</p>
+                        <div class="role-pills mt-sm">
+                            <span class="pill artisan">Asset Producers (Creator)</span>
+                            <span class="pill catalyst">Community Managers (Motivator)</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tech -->
-            <div class="feature-row mt-xl">
-                <div class="text-block">
-                    <h3>The Tech Economy</h3>
-                    <p class="mt-sm">Focus: Software, Data, and Digital Infrastructure.</p>
-                    <div class="role-pills mt-md">
-                        <span class="pill artisan">Frontend Builders (Artisan)</span>
-                        <span class="pill analyst">QA & Data Associates (Analyst)</span>
-                        <span class="pill architect">Backend Support (Architect)</span>
+            <!-- Row 2 (Reverse) -->
+            <div class="journey-row reverse">
+                <div class="journey-node left" data-industry="business">
+                    <div class="node-icon glass-circle"><span class="icon-emoji">📈</span></div>
+                    <div class="node-card glass-card dark">
+                        <h3>The Business Economy</h3>
+                        <p class="mt-sm">Focus: Marketing, Sales, and Starting Your Own Company.</p>
+                        <div class="role-pills mt-sm">
+                            <span class="pill catalyst">Sales & Growth (Motivator)</span>
+                            <span class="pill artisan">Operations Analysts (Creator)</span>
+                        </div>
                     </div>
                 </div>
-                <div class="graphic-block glass-card deep-purple-bg">
-                    <div class="mockup-ui">
-                        <div class="line animate-slide-right"></div>
-                        <div class="line medium animate-slide-right" style="animation-delay: 0.2s"></div>
-                        <div class="line short animate-slide-right" style="animation-delay: 0.4s"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Business & Growth -->
-            <div class="feature-row reverse mt-xl">
-                <div class="text-block">
-                    <h3>The Business & Growth Economy</h3>
-                    <p class="mt-sm">Focus: Sales, Operations, and Client Success.</p>
-                    <div class="role-pills mt-md">
-                        <span class="pill catalyst">Sales & Growth (Catalyst)</span>
-                        <span class="pill artisan">Operations Analysts (Artisan)</span>
-                        <span class="pill analyst">Client Success (Analyst)</span>
-                    </div>
-                </div>
-                <div class="graphic-block glass-card yellow-accent-bg">
-                    <div class="circle-chart" style="border-radius: 12px;">
-                        <div class="pulse" style="border-radius: 12px;"></div>
+                <div class="journey-node right" data-industry="sports">
+                    <div class="node-icon glass-circle"><span class="icon-emoji">⚽</span></div>
+                    <div class="node-card glass-card dark">
+                        <h3>The Sports Economy</h3>
+                        <p class="mt-sm">Focus: Athlete Branding, Event Management, and Fan Experience.</p>
+                        <div class="role-pills mt-sm">
+                            <span class="pill catalyst">Engagement Units (Motivator)</span>
+                            <span class="pill analyst">Performance Optimizers (Thinker)</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Design -->
-            <div class="feature-row mt-xl">
-                <div class="text-block">
-                    <h3>The Design Economy</h3>
-                    <p class="mt-sm">Focus: User Experience, Branding, and Motion Assets.</p>
-                    <div class="role-pills mt-md">
-                        <span class="pill artisan">Graphic & Motion Editors (Artisan)</span>
-                        <span class="pill catalyst">Brand Asset Creators (Catalyst)</span>
-                        <span class="pill architect">UI Assistants (Architect)</span>
+            <!-- Row 3 -->
+            <div class="journey-row">
+                <div class="journey-node left" data-industry="design">
+                    <div class="node-icon glass-circle"><span class="icon-emoji">🎨</span></div>
+                    <div class="node-card glass-card dark">
+                        <h3>The Design Economy</h3>
+                        <p class="mt-sm">Focus: Graphic Design, Fashion, and Animation.</p>
+                        <div class="role-pills mt-sm">
+                            <span class="pill artisan">Graphic & Motion Editors (Creator)</span>
+                            <span class="pill architect">UI Assistants (Dreamer)</span>
+                        </div>
                     </div>
                 </div>
-                <div class="graphic-block glass-card deep-purple-bg">
-                    <div class="mockup-ui">
-                        <div class="line short animate-slide-right"></div>
-                        <div class="line animate-slide-right" style="animation-delay: 0.2s"></div>
-                        <div class="line medium animate-slide-right" style="animation-delay: 0.4s"></div>
+                <div class="journey-node right" data-industry="entertainment">
+                    <div class="node-icon glass-circle"><span class="icon-emoji">🎬</span></div>
+                    <div class="node-card glass-card dark">
+                        <h3>The Entertainment Economy</h3>
+                        <p class="mt-sm">Focus: Film, Music, Streaming, and Performing Arts.</p>
+                        <div class="role-pills mt-sm">
+                            <span class="pill artisan">Film Editor (Creator)</span>
+                            <span class="pill architect">Executive Producer (Dreamer)</span>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Explore More -->
+            <div class="mt-xl text-center" style="position: relative; z-index: 5; padding-top: 24px;">
+                <p style="color: var(--primary-purple); font-weight: 600; font-size: 1.15rem; margin-bottom: 24px;">Discover 6+ more specialized industries in the Super Me App</p>
+                <button class="btn btn-primary" onclick="window.scrollTo(0,0)">Take the DNA Quiz to Start</button>
             </div>
         </div>
     </section>
@@ -319,80 +270,19 @@
         <div class="hero-card light-frosted">
             <div class="hero-content animate-on-scroll">
                 <div class="header-split split-align-center text-center">
-                    <h2 style="color: var(--primary-purple)">The Super Me Score (SMS)</h2>
-                    <p class="subtitle" style="color: var(--primary-purple-dark)">Your Credit Score for Skills. Verified
-                        by real-world Fractional Sprints.</p>
+                    <h2 style="color: var(--primary-purple)">Your Skills Portfolio</h2>
+                    <p class="subtitle" style="color: var(--primary-purple-dark)">Forget grades. Show the world what you can actually build.</p>
                 </div>
-                <div class="sms-breakdown mt-lg">
-                    <div class="sms-stat">
-                        <h4>40%</h4>
-                        <p>Technical</p>
-                    </div>
-                    <div class="sms-stat">
-                        <h4>30%</h4>
-                        <p>Economic ROI</p>
-                    </div>
-                    <div class="sms-stat">
-                        <h4>20%</h4>
-                        <p>Velocity</p>
-                    </div>
-                    <div class="sms-stat">
-                        <h4>10%</h4>
-                        <p>DNA Alignment</p>
-                    </div>
-                </div>
-                <!-- Pursue vs Pivot Map -->
-                <div class="roadmap-engine mt-xl text-left glass-card" style="background: white;">
-                    <h3>The Guidance Engine</h3>
-                    <div class="bento-grid mt-md">
-                        <div class="bento-cell" style="border-left: 4px solid #10B981; padding-left: 16px;">
-                            <h4 style="color: #10B981">Pursue Signal</h4>
-                            <p>High SMS + High DNA match. "You are an Alpha. Pursue to unlock higher payout."</p>
-                        </div>
-                        <div class="bento-cell"
-                            style="border-left: 4px solid var(--primary-yellow); padding-left: 16px;">
-                            <h4 style="color: var(--primary-yellow-light)">Pivot Signal</h4>
-                            <p>High SMS + Low DNA match. "High efficiency, but draining. Pivot to Creator Economy."</p>
-                        </div>
-                    </div>
+                <div class="mt-lg">
+                    <p style="font-size: 1.15rem; color: var(--text-main); font-weight: 500; max-width: 600px; margin: 0 auto; line-height: 1.8;">
+                        As you complete projects and learn new skills, your Super Me profile grows. It's a living showcase of your abilities that you can share with future schools, internships, or employers!
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enterprise/Demand -->
-    <section id="enterprise" class="section-container mt-lg pb-xl">
-        <div class="bento-grid enterprise-grid" style="display: block;">
-            <div class="bento-cell huge text-center glass-card animate-on-scroll">
-                <h2>Talent-as-a-Service</h2>
-                <p class="subtitle mt-sm">Don't hire a person. Hire a "Project Unit".</p>
-                <div class="pricing-boards mt-lg bento-grid" style="text-align: left;">
-                    <!-- Fractional Pricing -->
-                    <div class="glass-card" style="background: var(--bg-light)">
-                        <h3 style="color: var(--primary-purple)">Fractional Structure</h3>
-                        <ul class="stats-list" style="margin-top: 16px; padding-top: 0; border: none;">
-                            <li><strong>The Task (Execution):</strong> Fixed price per asset ($100/video).</li>
-                            <li><strong>The Sprint (Strategy):</strong> Retainer for outcome ($1k/mo).</li>
-                            <li><strong>The Advisory (Visionary):</strong> High-value fee or equity.</li>
-                        </ul>
-                    </div>
-                    <!-- Platform Fees -->
-                    <div class="glass-card" style="background: var(--bg-light)">
-                        <h3 style="color: var(--primary-purple)">Enterprise SaaS Logic</h3>
-                        <ul class="stats-list" style="margin-top: 16px; padding-top: 0; border: none;">
-                            <li><strong>Platform Access Fee:</strong> Monthly subscription for Talent Pool access.</li>
-                            <li><strong>Managed Talent Markup:</strong> 20-30% service fee on worker payout.</li>
-                            <li><strong>Success Fee:</strong> 15% buyout if hired full-time.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="mt-xl">
-                    <button class="btn btn-secondary">Platform Access</button>
-                    <button class="btn btn-primary ml-sm">Build a Unit</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- The Enterprise section has been removed to keep content student-focused. -->
 
     <footer class="footer pb-xl pt-lg">
         <div class="logo">

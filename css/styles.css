@@ -150,40 +150,104 @@ h3 {
     top: 24px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: var(--glass-border);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: var(--border-radius-pill);
-    padding: 12px 24px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
-    gap: 48px;
+    justify-content: space-between;
+    gap: 32px;
+    width: max-content;
+    max-width: 95vw;
     z-index: 100;
-    box-shadow: var(--glass-shadow);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: slideDownNav 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.pill-nav .links a {
-    text-decoration: none;
-    color: var(--text-main);
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s;
+@keyframes slideDownNav {
+    0% {
+        transform: translate(-50%, -150%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
 }
 
-.pill-nav .links a:hover {
-    color: var(--primary-purple);
+.pill-nav.scrolled {
+    padding: 8px 28px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), 0 0 24px rgba(90, 46, 139, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
+    gap: 24px;
+}
+
+.pill-nav .logo {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+
+.pill-nav .logo:hover {
+    transform: rotate(-2deg) scale(1.08);
 }
 
 .pill-nav .links {
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 8px;
+}
+
+.pill-nav .links a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-pill);
+    z-index: 1;
+    transition: color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.pill-nav .links a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 100%;
+    height: 100%;
+    background: var(--lavender-soft);
+    border-radius: var(--border-radius-pill);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pill-nav .links a:hover {
+    color: var(--primary-purple);
+    transform: translateY(-1px);
+}
+
+.pill-nav .links a:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 4px 12px rgba(90, 46, 139, 0.08);
 }
 
 /* Buttons */
 .btn {
-    padding: 14px 28px;
+    padding: 12px 28px;
     border-radius: var(--border-radius-pill);
     font-weight: 600;
     text-decoration: none;
@@ -192,13 +256,28 @@ h3 {
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     font-size: 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .btn-primary {
     background: var(--primary-purple);
     color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: none;
 }
 
 .btn-primary.dark {
@@ -209,6 +288,15 @@ h3 {
     transform: translateY(-2px);
     background: var(--primary-purple-dark);
     box-shadow: 0 8px 16px var(--lavender-glow);
+}
+
+.btn-primary:hover::after {
+    animation: shine 0.7s forwards;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 200%; }
 }
 
 .btn-secondary {
@@ -506,20 +594,178 @@ h3 {
 
 .feature-row .graphic-block {
     flex: 1;
-    height: 400px;
+    height: 320px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
 }
 
-.deep-purple-bg {
-    background: linear-gradient(135deg, var(--primary-purple-dark), var(--bg-darker));
+.deep-purple-bg::before,
+.yellow-accent-bg::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.yellow-accent-bg {
-    background: linear-gradient(135deg, var(--primary-yellow), #FF8C00);
+.deep-purple-bg::before {
+    background: var(--primary-purple);
+    top: 20%; left: 20%;
+    animation: slowDrift 8s infinite alternate ease-in-out;
+}
+
+.yellow-accent-bg::before {
+    background: var(--primary-yellow);
+    bottom: 20%; right: 20%;
+    animation: slowDriftRev 8s infinite alternate ease-in-out;
+}
+
+@keyframes slowDrift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(20px, 20px) scale(1.1); }
+}
+
+@keyframes slowDriftRev {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-20px, -20px) scale(1.1); }
+}
+
+.graphic-block > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   Sleek Role-Matching Filter
+   ========================================= */
+.opportunity-map {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.opportunity-map h3 {
+    color: var(--primary-purple);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.opportunity-map .filter-controls {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.select-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: cover;
+    pointer-events: none;
+}
+
+.glass-dropdown {
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.glass-dropdown:hover, .glass-dropdown:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(167, 139, 250, 0.5);
+    outline: none;
+}
+
+.glass-dropdown option {
+    background: var(--bg-dark);
+    color: white;
+}
+
+/* Animated Result Box */
+.filter-result-wrapper {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, margin-top 0.4s ease;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-result-wrapper.active {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 32px;
+}
+
+.animated-dashed-box {
+    padding: 24px 48px;
+    border: 1px dashed rgba(252, 211, 77, 0.8);
+    border-radius: 12px;
+    display: inline-block;
+    background: rgba(15, 23, 42, 0.6);
+    box-shadow: 0 0 20px rgba(252, 211, 77, 0.15);
+    animation: dashedGlow 3s infinite alternate;
+}
+
+@keyframes dashedGlow {
+    0% { box-shadow: 0 0 10px rgba(252, 211, 77, 0.1); border-color: rgba(252, 211, 77, 0.5); }
+    100% { box-shadow: 0 0 30px rgba(252, 211, 77, 0.3); border-color: rgba(252, 211, 77, 1); }
+}
+
+.result-content-inner {
+    text-align: center;
+}
+
+.match-title {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.match-title .highlight {
+    color: var(--primary-yellow);
+    font-weight: 700;
+}
+
+.next-step-hint {
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
 /* Graphic Mockups */
@@ -796,6 +1042,321 @@ h3 {
 }
 
 /* =========================================
+   Journey Map (Gamified Path)
+   ========================================= */
+.journey-map {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.journey-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 60px 0;
+}
+
+/* Connecting Horizontal Dashed Line */
+.journey-row::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    right: 20%;
+    height: 6px;
+    border-top: 6px dashed rgba(167, 139, 250, 0.5);
+    z-index: 0;
+}
+
+/* Vertical snaking curves */
+.journey-row:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 100%;
+    border: 6px dashed rgba(167, 139, 250, 0.5);
+    z-index: 0;
+}
+
+/* Right-side curve (downward path) */
+.journey-row:nth-child(odd):not(:last-child)::after {
+    right: calc(20% - 50px);
+    border-left: none;
+    border-radius: 0 40px 40px 0;
+}
+
+/* Left-side curve (downward path) */
+.journey-row:nth-child(even):not(:last-child)::after {
+    left: calc(20% - 50px);
+    border-right: none;
+    border-radius: 40px 0 0 40px;
+}
+
+.journey-node {
+    width: 45%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.journey-node.left {
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 40px;
+}
+
+.journey-node.right {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.node-icon.glass-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.9);
+    border: 2px solid var(--primary-purple);
+    box-shadow: 0 0 24px rgba(167, 139, 250, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.journey-node.left .node-icon { right: -35px; }
+.journey-node.right .node-icon { left: -35px; }
+
+.journey-node .node-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 32px;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-node .node-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(90, 46, 139, 0.3);
+    border-color: rgba(167, 139, 250, 0.4);
+}
+
+.journey-node .node-card h3 {
+    margin-bottom: 8px;
+    color: white;
+    font-size: 1.4rem;
+}
+
+.journey-node.left .role-pills { justify-content: flex-end; }/* =========================================
+   Industry Role Pills
+   ========================================= */
+.role-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.role-pills .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+.role-pills .pill.artisan {
+    color: #A78BFA;
+    border-color: rgba(167, 139, 250, 0.3);
+    background: rgba(167, 139, 250, 0.05);
+}
+
+.role-pills .pill.analyst {
+    color: #60A5FA;
+    border-color: rgba(96, 165, 250, 0.3);
+    background: rgba(96, 165, 250, 0.05);
+}
+
+.role-pills .pill.architect {
+    color: #FCD34D;
+    border-color: rgba(252, 211, 77, 0.3);
+    background: rgba(252, 211, 77, 0.05);
+}
+
+.role-pills .pill.catalyst {
+    color: #F472B6;
+    border-color: rgba(244, 114, 182, 0.3);
+    background: rgba(244, 114, 182, 0.05);
+}
+
+.role-pills .pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    filter: brightness(1.2);
+}
+
+/* =========================================
+   Find Your Path (Minimal Centered)
+   ========================================= */
+.dna-analyzer-bento {
+    background: #2A2A35;
+    border-radius: 24px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.dna-analyzer-bento .bento-content {
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.dna-analyzer-bento .bento-title {
+    color: #FACC15;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-shadow: 0 0 20px rgba(250, 204, 21, 0.2);
+}
+
+.dna-analyzer-bento .bento-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.dna-analyzer-bento .bento-interface {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Minimal Result Box */
+.minimal-result-box {
+    background: #18181B;
+    border-radius: 8px;
+    padding: 16px 24px;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.minimal-result-box:hover {
+    box-shadow: inset 0 4px 12px rgba(0,0,0,0.6), 0 0 15px rgba(16, 185, 129, 0.2), 0 0 0 1px rgba(16, 185, 129, 0.3);
+}
+
+.scan-line {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(16, 185, 129, 0) 0%, rgba(16, 185, 129, 0.3) 50%, rgba(16, 185, 129, 0) 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes scan-vertical {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+.minimal-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.minimal-text .match-label {
+    color: #10B981;
+}
+
+.minimal-text .match-purple {
+    color: #A855F7;
+    margin: 0 4px;
+}
+
+.minimal-text .match-green {
+    color: #10B981;
+}
+
+.block-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: #10B981;
+    margin-left: 6px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.bento-btn {
+    background: #8B5CF6;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 12px 32px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    animation: pulseButton 3s infinite alternate;
+}
+
+.bento-btn:hover {
+    background: #A78BFA;
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+}
+
+@keyframes pulseButton {
+    0% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); }
+    100% { box-shadow: 0 0 25px rgba(139, 92, 246, 0.6); }
+}
+
+/* =========================================
    Mobile Responsiveness (Max-width: 900px)
    ========================================= */
 @media (max-width: 900px) {
@@ -830,14 +1391,47 @@ h3 {
         width: 100%; 
     }
 
-    /* Feature Rows (Economies) */
-    .feature-row, .feature-row.reverse { 
-        flex-direction: column; 
-        gap: 32px; 
+    /* Gamified Journey Map (Mobile) */
+    .journey-row, .journey-row.reverse {
+        flex-direction: column;
+        padding: 0;
+        gap: 40px;
     }
-    .feature-row .graphic-block {
+    
+    .journey-row::before, .journey-row::after { 
+        display: none !important; 
+    }
+    
+    .journey-map {
+        padding: 20px 0 20px 40px;
+        border-left: 4px dashed rgba(167, 139, 250, 0.5);
+        margin-left: 16px;
+    }
+    
+    .journey-node {
         width: 100%;
-        min-height: 300px;
+        padding: 0 !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        margin-bottom: 32px;
+    }
+    
+    .journey-node .node-icon {
+        left: -60px !important;
+        right: auto !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.2rem !important;
+        border-width: 2px !important;
+    }
+    
+    .journey-node .node-card {
+        max-width: 100%;
+        padding: 24px;
+    }
+    
+    .journey-node .role-pills { 
+        justify-content: flex-start !important; 
     }
 
     /* Interactive UI Blocks */
