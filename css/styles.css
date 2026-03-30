@@ -1440,11 +1440,21 @@ h3 {
 
 .philosophy-quote .quote-mark {
     font-family: serif;
-    font-size: 3rem;
+    font-size: 4rem;
     color: var(--primary-yellow);
     line-height: 0;
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.2;
+}
+
+.philosophy-quote .quote-mark:first-of-type {
+    top: 10px;
+    left: 12px;
+}
+
+.philosophy-quote .quote-mark:last-of-type {
+    bottom: -20px;
+    right: 10px;
 }
 
 .philosophy-grid {
@@ -2453,4 +2463,42 @@ h3 {
     transform: scaleX(1);
     transform-origin: left;
     transition-delay: 0.5s;
+}
+
+/* --- Added Mobile Optimizations Below --- */
+@media (max-width: 768px) {
+    /* Topography Scaling */
+    h1 { font-size: 2.5rem; }
+    h2, .section-title { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    
+    /* Hero */
+    .hero-content { padding: 0 16px; margin: 0 auto; }
+    
+    /* Philosophy Grid */
+    .philosophy-header { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 24px; 
+    }
+    .philosophy-grid { grid-template-columns: 1fr; gap: 32px; }
+    .philosophy-quote { padding-left: 20px; max-width: 100%; border-left-width: 3px; }
+    
+    .philosophy-quote .quote-mark { font-size: 3rem; }
+    .philosophy-quote .quote-mark:first-of-type { top: -5px; left: 5px; }
+    .philosophy-quote .quote-mark:last-of-type { bottom: -10px; right: 5px; }
+
+    /* Opportunity Hub Filters */
+    .control-grid { display: flex; flex-direction: column; gap: 16px; }
+    .opportunity-control-center { padding: 24px 16px; }
+    .hub-select { padding: 12px 16px; font-size: 0.95rem; }
+    
+    /* Global Adjustments */
+    .section-container { padding: 0 16px; margin-top: 64px; }
+    .btn { padding: 10px 20px; font-size: 0.95rem; }
+    .glass-card { padding: 24px; }
+    
+    /* Route map */
+    .dna-grid-route { grid-template-columns: 1fr; gap: 24px; }
+    .header-route-map { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
 }
