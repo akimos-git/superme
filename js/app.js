@@ -171,4 +171,52 @@ document.addEventListener("DOMContentLoaded", () => {
         economyFilter.addEventListener('change', updateOpportunityMap);
         dnaFilter.addEventListener('change', updateOpportunityMap);
     }
+
+    // Dynamic Magnetic, 3D Tilt, and Ripple Effects for Buttons
+    const dynamicButtons = document.querySelectorAll('.btn, .bento-btn');
+    dynamicButtons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            btn.style.transition = 'transform 0.1s ease-out';
+            // Magnetic pull and slight 3D tilt
+            btn.style.transform = `perspective(500px) translate(${x * 0.15}px, ${y * 0.15}px) rotateX(${-y * 0.1}deg) rotateY(${x * 0.1}deg) scale(1.05)`;
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            btn.style.transform = 'perspective(500px) translate(0px, 0px) rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+        
+        // Ripple effect on click
+        btn.addEventListener('click', function(e) {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const ripple = document.createElement('span');
+            ripple.style.position = 'absolute';
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            ripple.style.transform = 'translate(-50%, -50%)';
+            ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.borderRadius = '50%';
+            ripple.style.animation = 'btn-ripple-effect 0.6s linear';
+            
+            // Ensure button can contain the ripple
+            if(getComputedStyle(btn).position === 'static') {
+                btn.style.position = 'relative';
+            }
+            btn.style.overflow = 'hidden';
+            
+            this.appendChild(ripple);
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
 });
+

@@ -107,36 +107,124 @@
     </section>
 
     <!-- Layer 1: Foundation & The DNA Strands -->
-    <section id="dna" class="section-container dark-mode mt-xl">
-        <div class="header-split animate-on-scroll">
-            <h2>Your Student DNA</h2>
-            <p>Everyone learns and works differently. Discover which of these 3 personality types you are to find your best path.</p>
+    <section id="dna" class="section-container dark-mode mt-xl dna-section-wrapper">
+        <div class="header-minimal animate-on-scroll">
+            <h2 class="dna-main-title">Your Student DNA</h2>
+            <p class="dna-main-desc">
+                Everyone learns and works differently. Discover which of these 4 personality types you are to find your best path.
+            </p>
         </div>
 
-        <div class="dna-grid-3 mt-lg animate-on-scroll">
+        <div class="dna-list-vertical animate-on-scroll">
             <!-- Card 1: Visionary -->
-            <div class="dna-item hover-glow-purple">
-                <div class="bg-numeral">01</div>
-                <div class="tag visionary">Visionary</div>
-                <h3>The Dreamer</h3>
-                <p>You have big ideas and love thinking about the future. You are great at leading and planning.</p>
+            <div class="dna-list-item">
+                <div class="tag visionary dna-tag">Visionary</div>
+                <h3 class="dna-item-title">The Dreamer</h3>
+                <p class="dna-item-desc">You have big ideas and love thinking about the future. You are great at leading and planning.</p>
             </div>
+            
             <!-- Card 2: Strategy -->
-            <div class="dna-item hover-glow-blue">
-                <div class="bg-numeral">02</div>
-                <div class="tag strategy">Strategy</div>
-                <h3>The Thinker</h3>
-                <p>You love solving puzzles, working with data, and figuring out how things work behind the scenes.</p>
+            <div class="dna-list-item">
+                <div class="tag strategy dna-tag">Strategy</div>
+                <h3 class="dna-item-title">The Thinker</h3>
+                <p class="dna-item-desc">You love solving puzzles, working with data, and figuring out how things work behind the scenes.</p>
             </div>
+            
             <!-- Card 3: Execution -->
-            <div class="dna-item hover-glow-yellow">
-                <div class="bg-numeral">03</div>
-                <div class="tag execution">Execution</div>
-                <h3>The Creator</h3>
-                <p>You love making things. Whether it's art, code, or videos, you learn best by creating.</p>
+            <div class="dna-list-item">
+                <div class="tag execution dna-tag">Execution</div>
+                <h3 class="dna-item-title">The Creator</h3>
+                <p class="dna-item-desc">You love making things. Whether it's art, code, or videos, you learn best by creating.</p>
             </div>
         </div>
     </section>
+
+    <!-- Style for the minimal list and mobile responsiveness -->
+    <style>
+        .dna-section-wrapper {
+            background-color: #0B1121;
+            padding: 80px 64px;
+            border-radius: 40px;
+        }
+        .header-minimal {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 64px;
+        }
+        .dna-main-title {
+            font-size: 3.5rem;
+            color: white;
+            margin: 0;
+            line-height: 1.1;
+        }
+        .dna-main-desc {
+            color: #E2E8F0;
+            font-size: 1.1rem;
+            max-width: 440px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .dna-list-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .dna-list-item {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .dna-tag {
+            color: #FACC15;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .dna-item-title {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .dna-item-desc {
+            color: #94A3B8;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            max-width: 600px;
+        }
+        .dna-list-item:hover .dna-item-title {
+            transform: translateX(12px);
+            color: #FACC15 !important;
+        }
+        .dna-list-item:hover {
+            transform: translateX(4px);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .dna-section-wrapper {
+                padding: 48px 24px;
+                border-radius: 24px;
+            }
+            .dna-main-title {
+                font-size: 2.5rem;
+            }
+            .header-minimal {
+                margin-bottom: 40px;
+            }
+            .dna-list-vertical {
+                gap: 32px;
+            }
+            .dna-item-title {
+                font-size: 1.8rem;
+            }
+            .dna-item-desc {
+                font-size: 1rem;
+            }
+        }
+    </style>
 
     <!-- The Echelons section has been removed to keep content student-focused. -->
 
@@ -270,62 +358,7 @@
         </div>
     </section>
 
-    <!-- Layer 3: The Earning Profile -->
-    <section id="portfolio" class="section-container mt-xl">
-        <div class="portfolio-dashboard glass-panel animate-on-scroll">
-            <div class="portfolio-grid">
-                <!-- Profile Identity -->
-                <div class="profile-main">
-                    <div class="profile-header">
-                        <div class="avatar-placeholder">SM</div>
-                        <div class="profile-info">
-                            <h2 class="text-purple">Your Skills Portfolio</h2>
-                            <p class="text-muted">Rank: Elite Creator</p>
-                        </div>
-                    </div>
-                    
-                    <div class="profile-stats mt-lg">
-                        <div class="stat-item">
-                            <span class="stat-label">Total Earning Potential</span>
-                            <span class="stat-value text-yellow">$2,400+ / mo</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Masterclasses Completed</span>
-                            <span class="stat-value">12</span>
-                        </div>
-                    </div>
 
-                    <p class="profile-desc mt-lg">
-                        Forget grades. Show the world what you can actually build. Your Super Me profile is a living showcase of your abilities that you can share with future schools or employers!
-                    </p>
-                </div>
-
-                <!-- Skill Breakdown -->
-                <div class="skill-breakdown">
-                    <h3>Current Skill DNA</h3>
-                    
-                    <div class="skill-meter mt-md">
-                        <div class="meter-info"><span>Tech Infrastructure</span> <span>85%</span></div>
-                        <div class="meter-bar"><div class="meter-fill blue" style="width: 85%"></div></div>
-                    </div>
-
-                    <div class="skill-meter mt-md">
-                        <div class="meter-info"><span>Visual Production</span> <span>70%</span></div>
-                        <div class="meter-bar"><div class="meter-fill purple" style="width: 70%"></div></div>
-                    </div>
-
-                    <div class="skill-meter mt-md">
-                        <div class="meter-info"><span>Growth Strategy</span> <span>60%</span></div>
-                        <div class="meter-bar"><div class="meter-fill yellow" style="width: 60%"></div></div>
-                    </div>
-
-                    <div class="portfolio-footer mt-lg">
-                        <span class="verification-badge">Verified by Super Me AI</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- The Enterprise section has been removed to keep content student-focused. -->
 
