@@ -41,8 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const outcomes = [
             "<span class='match-purple'>ARCHITECT</span><span class='match-green'>| Ecosystem Design</span>",
             "<span class='match-purple'>ANALYST</span><span class='match-green'>| Tech Infrastructure</span>",
-            "<span class='match-purple'>ARTISAN</span><span class='match-green'>| Production & Assets</span>",
-            "<span class='match-purple'>CATALYST</span><span class='match-green'>| Sales & Community</span>"
+            "<span class='match-purple'>ARTISAN</span><span class='match-green'>| Production & Assets</span>"
         ];
         
         runBtn.addEventListener('click', () => {
