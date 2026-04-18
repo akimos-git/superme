@@ -599,11 +599,23 @@ h3 { font-size: 1.75rem; letter-spacing: -0.02em; }
     
     .v-philosophy-grid { grid-template-columns: 1fr; }
     .v-industry-grid { grid-template-columns: repeat(2, 1fr); }
-    .v-section-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .v-quote { border-left: none; border-top: 2px solid var(--primary-purple); padding-left: 0; padding-top: 16px;}
+    
+    /* Safely allow section-header to use its default centered rules */
+    .v-section-header { flex-direction: column; gap: 24px; }
+    
+    /* Remove unwanted border line and reset padding */
+    .v-quote { border-left: none; padding-left: 0; border-top: none; }
 }
 
 @media (max-width: 768px) {
+    /* Critical Mobile Fixes for Overlap */
+    .v-hero h1 { font-size: clamp(2.5rem, 12vw, 3.5rem); line-height: 1.0; }
+    .v-hero-sticky { padding-top: 60px; }
+    .v-hero-split-text { gap: 16px; margin-bottom: 10px; margin-top: 10px; min-height: auto; }
+    .v-hero-center { height: 230px; margin: 10px auto; }
+    .v-hero-bottom { gap: 24px; margin-top: 10px; }
+    
+    /* Other mobile scaling */
     .v-industry-grid { grid-template-columns: 1fr; }
     .v-links { display: none; }
     .v-dna-row { flex-direction: column; align-items: flex-start; gap: 16px; padding: 24px; }
