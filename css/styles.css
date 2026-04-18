@@ -69,6 +69,7 @@ h3 { font-size: 1.75rem; letter-spacing: -0.02em; }
 .mt-md { margin-top: 32px; }
 .mt-lg { margin-top: 64px; }
 .mt-xl { margin-top: 96px; }
+.pb-sm { padding-bottom: 32px !important; }
 .text-center { text-align: center; }
 .align-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
 
@@ -537,8 +538,8 @@ h3 { font-size: 1.75rem; letter-spacing: -0.02em; }
 /* Footer */
 .v-footer {
     border-top: 1px solid rgba(255,255,255,0.05);
-    padding: 64px 0;
-    margin-top: 64px;
+    padding: 40px 0;
+    margin-top: 0;
 }
 .v-footer-content {
     display: flex; flex-direction: column; align-items: center; text-align: center;
