@@ -1,375 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Me | Precision Upskilling</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
     <!-- Nav -->
-    <nav class="pill-nav">
-        <div class="logo">
-            <span class="super">super</span>
-            <span class="me">me!</span>
+    <nav class="v-nav stagger-reveal" style="--delay: 0s">
+        <div class="v-nav-container">
+            <a href="#" class="logo-link">
+                <div class="v-logo">
+                    <span class="super">super</span><span class="me">me!</span>
+                </div>
+            </a>
+            <div class="v-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#dna" class="nav-link">Strengths</a>
+                <a href="#economies" class="nav-link">Industries</a>
+            </div>
+            <button class="v-btn nav-btn">Get Started</button>
         </div>
-        <div class="links">
-            <a href="#about">About</a>
-            <a href="#dna">Strengths</a>
-            <a href="#economies">Industries</a>
-        </div>
-        <button class="nav-cta btn btn-primary">Get Started</button>
     </nav>
 
-    <!-- Layer 0: Hero / DNA Diagnostic -->
-    <section class="floating-card-section pt-hero full-bleed">
-        <div class="hero-card glass-panel hero-full" style="background-image: url('assets/images/hero-bg.png');">
-            <!-- Animated Interactive Overlay Elements -->
-            <div class="hero-orb orb-1"></div>
-            <div class="hero-orb orb-2"></div>
-            <div class="hero-orb orb-3"></div>
-
-            <div class="floating-ui-tag tag-left">
-                <div class="pulse-dot"></div>
-                <span>Discovering Your Talents...</span>
-            </div>
-            <div class="floating-ui-tag tag-right">
-                <div class="pulse-dot yellow"></div>
-                <span>Monetizing Your Strengths</span>
-            </div>
-
-            <div class="hero-content animate-on-scroll">
-                <h1 class="hero-title">Your one-stop solution to<br>start earning with your <span style="color: var(--primary-yellow);">skills</span>.</h1>
-                <p class="hero-subtitle mt-md">
-                    Super Me helps you identify your natural strengths, master high-demand skills, and build a career you can monetize.
-                </p>
-                <div class="dna-analyzer-bento animate-on-scroll" id="dna-analyzer">
-                    <div class="bento-content text-center">
-                        <h3 class="bento-title">Unlock Your Earning Potential</h3>
-                        <p class="bento-subtitle mt-sm">
-                            Take a quick interactive quiz to see which high-income paths<br>match your unique skills. No resume needed!
-                        </p>
+    <!-- Hero -->
+    <header class="v-hero">
+        <div class="v-hero-sticky">
+            <div class="v-hero-bg-glow"></div>
+            <div class="v-container">
+                <div class="v-hero-split-text" id="intro-seq-container">
+                    <div class="v-hero-left intro-seq-left">
+                        <h1>Precision</h1>
                     </div>
                     
-                    <div class="bento-interface text-center mt-lg">
-                        <div class="minimal-result-box">
-                            <div id="scanner-text" class="minimal-text">READY TO START<span class="block-cursor"></span></div>
-                            <div class="scan-line"></div>
-                        </div>
-                        <button id="run-diagnostic-btn" class="bento-btn mt-lg">Discover Your Strengths</button>
+                    <div class="v-hero-center intro-seq-images">
+                        <div class="v-rot-img img-1"></div>
+                        <div class="v-rot-img img-2"></div>
+                        <div class="v-rot-img img-3"></div>
+                        <div class="v-rot-img img-4"></div>
+                        <div class="v-rot-img img-5"></div>
                     </div>
+
+                    <div class="v-hero-right intro-seq-right">
+                        <h1>Upskilling</h1>
+                    </div>
+                </div>
+
+                <div class="v-hero-bottom">
+                    <p class="v-hero-subtitle stagger-reveal" style="--delay: 0.4s">
+                        Your one-stop solution to start earning with your <span class="highlight-yellow">skills</span>.<br>
+                        Identify strengths, master high-demand skills, build a career.
+                    </p>
+
+                    <div class="v-dna-analyzer glass-panel stagger-reveal" style="--delay: 0.5s" id="dna-analyzer">
+                        <div class="dna-info">
+                            <h3>Unlock Your Earning Potential</h3>
+                            <p>Take a quick interactive quiz to see which high-income paths match your unique skills. No resume needed!</p>
+                        </div>
+                        <div class="dna-action">
+                            <div class="minimal-result-box">
+                                <div id="scanner-text" class="minimal-text">READY TO START<span class="block-cursor"></span></div>
+                                <div class="scan-line"></div>
+                            </div>
+                            <button id="run-diagnostic-btn" class="v-btn v-btn-primary mt-sm">Discover Your Strengths</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Philosophy -->
+    <section id="about" class="v-section stagger-reveal-group">
+        <div class="v-container">
+            <div class="v-section-header stagger-item">
+                <h2>Your Guide to the <br><span class="highlight-purple">Real World</span></h2>
+                <div class="v-quote">
+                    <p>"Super Me helps you figure out what you are incredibly good at, teaches you how to do it, and helps you prove it to the world."</p>
+                </div>
+            </div>
+
+            <div class="v-philosophy-grid mt-xl">
+                <div class="v-glass-card stagger-item">
+                    <div class="step-num">01 — LEARN</div>
+                    <h3>Learn What Matters</h3>
+                    <p>Skip the boring textbooks. We teach you exactly what you need to know for the high-income job you want.</p>
+                </div>
+                <div class="v-glass-card stagger-item">
+                    <div class="step-num">02 — DO</div>
+                    <h3>Real Projects</h3>
+                    <p>Don't just read about it. Work on real-world projects to build true confidence, experience, and speed.</p>
+                </div>
+                <div class="v-glass-card stagger-item">
+                    <div class="step-num">03 — PROVE</div>
+                    <h3>Your Portfolio</h3>
+                    <p>Build an interactive profile that shows exactly what you can build. It's the ultimate proof of your value.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Layer 0.5: The Super Me Philosophy -->
-    <section id="about" class="section-container mt-xl pb-xl">
-        <div class="philosophy-header animate-on-scroll">
-            <h2 class="section-title">Your Guide to the <br><span class="text-purple">Real World</span></h2>
-            <div class="philosophy-quote">
-                <span class="quote-mark">&ldquo;</span>
-                <p>Super Me helps you figure out what you are incredibly good at, teaches you how to do it, and helps you prove it to the world.</p>
-                <span class="quote-mark">&rdquo;</span>
-            </div>
-        </div>
-
-        <div class="philosophy-grid mt-xl animate-on-scroll">
-            <!-- Step 01: LEARN -->
-            <div class="philosophy-item step-1">
-                <div class="step-badge">01 — LEARN</div>
-                <div class="step-icon">📚</div>
-                <h3>Learn What Matters</h3>
-                <p>Skip the boring textbooks. We teach you exactly what you need to know for the high-income job you want.</p>
-                <div class="step-connector"></div>
+    <!-- DNA -->
+    <section id="dna" class="v-section bg-darker stagger-reveal-group">
+        <div class="v-container">
+            <div class="v-section-header header-left stagger-item">
+                <h2>Your Student <span class="highlight-yellow">DNA</span></h2>
+                <p class="subtitle">Everyone learns and works differently. Discover which of these 4 personality types you are to find your best path.</p>
             </div>
 
-            <!-- Step 02: DO -->
-            <div class="philosophy-item step-2">
-                <div class="step-badge">02 — DO</div>
-                <div class="step-icon">⚡</div>
-                <h3>Real Projects</h3>
-                <p>Don't just read about it. Work on real-world projects to build true confidence, experience, and speed.</p>
-                <div class="step-connector"></div>
-            </div>
-
-            <!-- Step 03: PROVE -->
-            <div class="philosophy-item step-3">
-                <div class="step-badge">03 — PROVE</div>
-                <div class="step-icon">🏆</div>
-                <h3>Your Portfolio</h3>
-                <p>Build an interactive profile that shows exactly what you can build. It's the ultimate proof of your value.</p>
+            <div class="v-dna-list mt-xl">
+                <div class="v-dna-row stagger-item">
+                    <div class="dna-tag text-yellow">Visionary</div>
+                    <div class="dna-content">
+                        <h3 class="dna-title">The Dreamer</h3>
+                        <p class="dna-desc">You have big ideas and love thinking about the future. You are great at leading and planning.</p>
+                    </div>
+                    <div class="dna-arrow">→</div>
+                </div>
+                <div class="v-dna-row stagger-item">
+                    <div class="dna-tag text-blue">Strategy</div>
+                    <div class="dna-content">
+                        <h3 class="dna-title">The Thinker</h3>
+                        <p class="dna-desc">You love solving puzzles, working with data, and figuring out how things work behind the scenes.</p>
+                    </div>
+                    <div class="dna-arrow">→</div>
+                </div>
+                <div class="v-dna-row stagger-item">
+                    <div class="dna-tag text-gradient">Execution</div>
+                    <div class="dna-content">
+                        <h3 class="dna-title">The Creator</h3>
+                        <p class="dna-desc">You love making things. Whether it's art, code, or videos, you learn best by creating.</p>
+                    </div>
+                    <div class="dna-arrow">→</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Layer 1: Foundation & The DNA Strands -->
-    <section id="dna" class="section-container dark-mode mt-xl dna-section-wrapper">
-        <div class="header-minimal animate-on-scroll">
-            <h2 class="dna-main-title">Your Student DNA</h2>
-            <p class="dna-main-desc">
-                Everyone learns and works differently. Discover which of these 4 personality types you are to find your best path.
-            </p>
-        </div>
-
-        <div class="dna-list-vertical animate-on-scroll">
-            <!-- Card 1: Visionary -->
-            <div class="dna-list-item">
-                <div class="tag visionary dna-tag">Visionary</div>
-                <h3 class="dna-item-title">The Dreamer</h3>
-                <p class="dna-item-desc">You have big ideas and love thinking about the future. You are great at leading and planning.</p>
+    <!-- Economies / Map -->
+    <section id="economies" class="v-section">
+        <div class="v-container">
+            <div class="v-section-header stagger-reveal" style="--delay: 0.1s">
+                <h2>Global Opportunity <br><span class="highlight-gradient">Hub</span></h2>
+                <p class="subtitle">
+                    The world is your office. Test-drive career masterclasses matched to your specific DNA.
+                </p>
             </div>
-            
-            <!-- Card 2: Strategy -->
-            <div class="dna-list-item">
-                <div class="tag strategy dna-tag">Strategy</div>
-                <h3 class="dna-item-title">The Thinker</h3>
-                <p class="dna-item-desc">You love solving puzzles, working with data, and figuring out how things work behind the scenes.</p>
-            </div>
-            
-            <!-- Card 3: Execution -->
-            <div class="dna-list-item">
-                <div class="tag execution dna-tag">Execution</div>
-                <h3 class="dna-item-title">The Creator</h3>
-                <p class="dna-item-desc">You love making things. Whether it's art, code, or videos, you learn best by creating.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Style for the minimal list and mobile responsiveness -->
-    <style>
-        .dna-section-wrapper {
-            background-color: #0B1121;
-            padding: 80px 64px;
-            border-radius: 40px;
-        }
-        .header-minimal {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 64px;
-        }
-        .dna-main-title {
-            font-size: 3.5rem;
-            color: white;
-            margin: 0;
-            line-height: 1.1;
-        }
-        .dna-main-desc {
-            color: #E2E8F0;
-            font-size: 1.1rem;
-            max-width: 440px;
-            line-height: 1.6;
-            margin: 0;
-        }
-        .dna-list-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-        }
-        .dna-list-item {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .dna-tag {
-            color: #FACC15;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-        .dna-item-title {
-            color: white;
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        .dna-item-desc {
-            color: #94A3B8;
-            line-height: 1.6;
-            font-size: 1.05rem;
-            max-width: 600px;
-        }
-        .dna-list-item:hover .dna-item-title {
-            transform: translateX(12px);
-            color: #FACC15 !important;
-        }
-        .dna-list-item:hover {
-            transform: translateX(4px);
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            .dna-section-wrapper {
-                padding: 48px 24px;
-                border-radius: 24px;
-            }
-            .dna-main-title {
-                font-size: 2.5rem;
-            }
-            .header-minimal {
-                margin-bottom: 40px;
-            }
-            .dna-list-vertical {
-                gap: 32px;
-            }
-            .dna-item-title {
-                font-size: 1.8rem;
-            }
-            .dna-item-desc {
-                font-size: 1rem;
-            }
-        }
-    </style>
-
-    <!-- The Echelons section has been removed to keep content student-focused. -->
-
-    <!-- Layer 2: The Global Opportunity Hub -->
-    <section id="economies" class="section-container dark-mode mt-xl pb-xl">
-        <div class="hub-header animate-on-scroll">
-            <h2 class="section-title">Global Opportunity <span class="text-yellow">Hub</span></h2>
-            <p class="section-subtitle">The world is your office. Test-drive career masterclasses matched to your specific DNA.</p>
-        </div>
-
-        <!-- The Control Center (Filter) -->
-        <div class="opportunity-control-center animate-on-scroll mt-lg mb-xl">
-            <div class="control-header">
-                <div class="status-indicator"><div class="pulse-dot green"></div> <span>Matched Roles Active</span></div>
-                <h3>Smart Career Scan</h3>
-            </div>
-            
-            <div class="control-grid mt-md">
-                <div class="select-group">
-                    <label>Target Industry</label>
-                    <select id="economy-filter" class="hub-select">
+            <!-- Filter Controls -->
+            <div class="v-control-center glass-panel stagger-item mt-lg">
+                <div class="control-header">
+                    <div class="status-dot"></div>
+                    <span>Smart Career Scan Active</span>
+                </div>
+                <div class="v-filters mt-md">
+                    <select id="economy-filter" class="v-select">
                         <option value="">Select Economy</option>
                         <option value="creator">Creator Economy</option>
                         <option value="tech">Tech Economy</option>
                         <option value="business">Business Economy</option>
                         <option value="sports">Sports Economy</option>
                         <option value="design">Design Economy</option>
-                        <option value="entertainment">Entertainment Economy</option>
+                        <option value="entertainment">Entertainment</option>
                         <option value="green">Green Economy</option>
-                        <option value="health">Healthcare Economy</option>
-                        <option value="edu">Education Economy</option>
-                        <option value="finance">Finance Economy</option>
-                        <option value="hospitality">Hospitality Economy</option>
-                        <option value="deeptech">Deep Tech Economy</option>
+                        <option value="health">Healthcare</option>
+                        <option value="edu">Education</option>
+                    </select>
+                    <select id="dna-filter" class="v-select">
+                        <option value="">Select DNA</option>
+                        <option value="architect">The Dreamer</option>
+                        <option value="analyst">The Thinker</option>
+                        <option value="artisan">The Creator</option>
                     </select>
                 </div>
-                <div class="select-group">
-                    <label>Detected DNA</label>
-                    <select id="dna-filter" class="hub-select">
-                        <option value="">Select DNA</option>
-                        <option value="architect">The Dreamer (Visionary)</option>
-                        <option value="analyst">The Thinker (Strategy)</option>
-                        <option value="artisan">The Creator (Execution)</option>
-                    </select>
+                
+                <div id="role-matching-result-container" class="v-hub-result">
+                    <div id="filter-result">
+                        <p class="text-muted">Select both filters to see your career match...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="v-industry-grid mt-xl">
+                <!-- Industry Cards -->
+                <div class="v-ind-card stagger-item glow-blue" data-industry="tech">
+                    <div class="v-ind-number">01</div>
+                    <div class="v-icon">💻</div>
+                    <h3>Tech Economy</h3>
+                    <p>Apps, Websites, and Software. The backbone of the digital world.</p>
+                    <div class="v-pills mt-sm">
+                        <span class="v-pill">Frontend Builder</span>
+                    </div>
+                </div>
+                <div class="v-ind-card stagger-item glow-purple" data-industry="creator">
+                    <div class="v-ind-number">02</div>
+                    <div class="v-icon">📸</div>
+                    <h3>Creator Economy</h3>
+                    <p>YouTube, Podcasting, and Digital Art. Build a brand around your passion.</p>
+                    <div class="v-pills mt-sm">
+                        <span class="v-pill">Asset Producer</span>
+                    </div>
+                </div>
+                <div class="v-ind-card stagger-item glow-yellow" data-industry="business">
+                    <div class="v-ind-number">03</div>
+                    <div class="v-icon">📈</div>
+                    <h3>Business Economy</h3>
+                    <p>Marketing, Operations, and Sales. Driving growth for the next generation.</p>
+                    <div class="v-pills mt-sm">
+                        <span class="v-pill">Operations Analyst</span>
+                    </div>
+                </div>
+                <div class="v-ind-card stagger-item glow-blue" data-industry="sports">
+                    <div class="v-ind-number">04</div>
+                    <div class="v-icon">⚽</div>
+                    <h3>Sports Economy</h3>
+                    <p>Fan experience and athlete branding. Transforming sports with tech.</p>
+                    <div class="v-pills mt-sm">
+                        <span class="v-pill">Performance Ops</span>
+                    </div>
+                </div>
+                <div class="v-ind-card stagger-item glow-purple" data-industry="design">
+                    <div class="v-ind-number">05</div>
+                    <div class="v-icon">🎨</div>
+                    <h3>Design Economy</h3>
+                    <p>Graphic design and UX. Making the complex world beautiful.</p>
+                    <div class="v-pills mt-sm">
+                        <span class="v-pill">Motion Editor</span>
+                    </div>
+                </div>
+                <div class="v-ind-card stagger-item glow-yellow" data-industry="entertainment">
+                    <div class="v-ind-number">06</div>
+                    <div class="v-icon">🎬</div>
+                    <h3>Entertainment</h3>
+                    <p>Film, Music, and Streaming. Creating the stories of tomorrow.</p>
+                    <div class="v-pills mt-sm">
+                        <span class="v-pill">Film Editor</span>
+                    </div>
                 </div>
             </div>
             
-            <div id="role-matching-result-container" class="hub-result-wrapper mt-lg">
-                <div id="filter-result" class="hub-result-box">
-                    <p class="placeholder-text">Select both filters to see your career match...</p>
-                </div>
+            <div class="v-explore-footer text-center stagger-item mt-xl">
+                <p>Discover 6+ more specialized industries in the Super Me App</p>
+                <button class="v-btn v-btn-primary mt-sm" onclick="window.scrollTo(0,0)">Start Your DNA Test</button>
             </div>
-        </div>
-
-        <div class="hub-journey-grid mt-xl">
-            <!-- Card 1: Tech -->
-            <div class="hub-node hover-glow-blue" data-industry="tech">
-                <div class="bg-numeral">01</div>
-                <div class="node-icon"><span class="icon-emoji">💻</span></div>
-                <h3>Tech Economy</h3>
-                <p>Apps, Websites, and Software. The backbone of the digital world.</p>
-                <div class="role-pills mt-md">
-                    <span class="hub-pill artisan">Frontend Builder</span>
-                    <span class="hub-pill analyst">QA Analyst</span>
-                </div>
-            </div>
-
-            <!-- Card 2: Creator -->
-            <div class="hub-node hover-glow-purple" data-industry="creator">
-                <div class="bg-numeral">02</div>
-                <div class="node-icon"><span class="icon-emoji">📸</span></div>
-                <h3>Creator Economy</h3>
-                <p>YouTube, Podcasting, and Digital Art. Build a brand around your passion.</p>
-                <div class="role-pills mt-md">
-                    <span class="hub-pill artisan">Asset Producer</span>
-                    <span class="hub-pill architect">Ecosystem Lead</span>
-                </div>
-            </div>
-
-            <!-- Card 3: Business -->
-            <div class="hub-node hover-glow-yellow" data-industry="business">
-                <div class="bg-numeral">03</div>
-                <div class="node-icon"><span class="icon-emoji">📈</span></div>
-                <h3>Business Economy</h3>
-                <p>Marketing, Operations, and Sales. Driving growth for the next generation.</p>
-                <div class="role-pills mt-md">
-                    <span class="hub-pill analyst">Operations Analyst</span>
-                    <span class="hub-pill artisan">Success Exec</span>
-                </div>
-            </div>
-
-            <!-- Card 4: Sports -->
-            <div class="hub-node hover-glow-blue" data-industry="sports">
-                <div class="bg-numeral">04</div>
-                <div class="node-icon"><span class="icon-emoji">⚽</span></div>
-                <h3>Sports Economy</h3>
-                <p>Fan experience and athlete branding. Transforming sports with tech.</p>
-                <div class="role-pills mt-md">
-                    <span class="hub-pill analyst">Performance Ops</span>
-                </div>
-            </div>
-
-            <!-- Card 5: Design -->
-            <div class="hub-node hover-glow-purple" data-industry="design">
-                <div class="bg-numeral">05</div>
-                <div class="node-icon"><span class="icon-emoji">🎨</span></div>
-                <h3>Design Economy</h3>
-                <p>Graphic design and UX. Making the complex world beautiful.</p>
-                <div class="role-pills mt-md">
-                    <span class="hub-pill artisan">Motion Editor</span>
-                    <span class="hub-pill architect">UI Assistant</span>
-                </div>
-            </div>
-
-            <!-- Card 6: Entertainment -->
-            <div class="hub-node hover-glow-yellow" data-industry="entertainment">
-                <div class="bg-numeral">06</div>
-                <div class="node-icon"><span class="icon-emoji">🎬</span></div>
-                <h3>Entertainment</h3>
-                <p>Film, Music, and Streaming. Creating the stories of tomorrow.</p>
-                <div class="role-pills mt-md">
-                    <span class="hub-pill artisan">Film Editor</span>
-                    <span class="hub-pill architect">Producer</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="explore-footer mt-xl text-center">
-            <p>Discover 6+ more specialized industries in the Super Me App</p>
-            <button class="btn btn-primary mt-md" onclick="window.scrollTo(0,0)">Start Your DNA Test</button>
         </div>
     </section>
 
-
-
-    <!-- The Enterprise section has been removed to keep content student-focused. -->
-
-    <footer class="footer pb-xl pt-lg">
-        <div class="logo">
-            <span class="super">super</span><span class="me">me!</span>
+    <!-- Footer -->
+    <footer class="v-footer">
+        <div class="v-container">
+            <div class="v-footer-content">
+                <div class="v-logo">
+                    <span class="super">super</span><span class="me">me!</span>
+                </div>
+                <p class="text-muted mt-sm">© 2026 Super Me. The Fractional Upskilling Engine.</p>
+            </div>
         </div>
-        <p class="mt-sm text-muted">© 2026 Super Me. The Fractional Upskilling Engine.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/app.js"></script>
 </body>
-
 </html>
